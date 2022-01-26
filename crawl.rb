@@ -22,7 +22,6 @@ info = response.css('div.s-result-item').each do |element|
     if !name.to_s.strip.empty? && !price.to_s.strip.empty? && !link.to_s.strip.empty?
         products_info.append("Opis: " + name.to_s + "\n")
         products_info.append("Cena: " + price.to_s + "$\n")
-        puts link
         url2 = "https://www.amazon.com/%s " % link
         page2=URI.open(url2, headers)
         resp = Nokogiri::HTML(page2.read)
